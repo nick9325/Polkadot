@@ -14,6 +14,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  useink:
+    specifier: ^1.14.1
+    version: 1.14.1(react@18.2.0)(ws@8.16.0)
 
 devDependencies:
   '@types/node':
@@ -2674,6 +2677,17 @@ packages:
       punycode: 2.3.1
     dev: true
 
+  /useink@1.14.1(react@18.2.0)(ws@8.16.0):
+    resolution: {integrity: sha512-ecCwowOaBUmeIiEmTHw84SD3mM07CafWqGyXIOGEkX/19klC/pCAdDDHP2IM1yPlCTbNVDiWd564SqAu33tDPQ==}
+    peerDependencies:
+      react: ^18.0.0
+      ws: ^8.13.0
+    dependencies:
+      nanoid: 3.3.7
+      react: 18.2.0
+      ws: 8.16.0
+    dev: false
+
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
@@ -2763,6 +2777,19 @@ packages:
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
+
+  /ws@8.16.0:
+    resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
 
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
