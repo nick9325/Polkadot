@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 
 
 
-export default function Home() {
+export default function TodoPage() {
 
   const { account, disconnect } = useWallet();
   const router = useRouter();
