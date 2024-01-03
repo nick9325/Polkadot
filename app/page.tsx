@@ -1,6 +1,8 @@
 
 "use client"
 
+
+import Bank from '@/components/Bank';
 import Todo from '@/components/Todo'
 
 import { useWallet, useAllWallets } from 'useink';
@@ -77,6 +79,9 @@ export default function Home() {
 
       <div>
         <Todo />
+      </div>
+      <div>
+        <Bank/>
       </div>
 
 
