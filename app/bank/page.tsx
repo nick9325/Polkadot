@@ -1,18 +1,15 @@
 
 "use client"
-
-
 import Bank from '@/components/Bank';
-
-import { useWallet} from 'useink';
+import Wallet from '@/components/Wallet';
 import { useRouter } from 'next/navigation';
-
+import { useWallet } from 'useink';
+import Link from 'next/link';
 
 export default function BankPage() {
 
-  const { account,disconnect } = useWallet();
+  const { account } = useWallet();
   const router = useRouter()
-
 
   if (!account) {
     return (
@@ -24,23 +21,13 @@ export default function BankPage() {
 
   return (
     <div className='flex items-center justify-center flex-col gap-3 p-4'>
-      <div className="bg-gray-100 p-4 rounded-md shadow-md">
-        <div className="text-lg">
-          Wallet name: <strong className="text-blue-500">{account.name}</strong>
-        </div>
-        <button
-          onClick={disconnect}
-          className="bg-red-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300"
-        >
-          Disconnect from wallet
-        </button>
-      </div>
+     <Wallet/>
 
       <div>
         <Bank />
       </div>
 
-      <button onClick={() => router.push('/todo')} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none transition duration-300 transform hover:scale-105">Visit Todo Dapp</button>
+      <Link href={'/todo'} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none transition duration-300 transform hover:scale-105">Visit Todo Dapp</Link>
 
     </div>
   )

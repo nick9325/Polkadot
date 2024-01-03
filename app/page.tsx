@@ -2,11 +2,12 @@
 "use client"
 
 import { useWallet, useAllWallets } from 'useink';
-import { useRouter } from 'next/navigation';
+import Wallet from '@/components/Wallet';
+import Link from 'next/link';
 
 export default function Home() {
 
-  const { account, connect, disconnect } = useWallet();
+  const { account, connect } = useWallet();
   const wallets = useAllWallets();
 
   if (!account) {
@@ -45,27 +46,16 @@ export default function Home() {
     )
   }
 
-  const router = useRouter();
 
   return (
     <div className='flex items-center justify-center flex-col gap-3 p-4'>
-      <div className="bg-gray-100 p-4 rounded-md shadow-md">
-        <div className="text-lg">
-          Wallet name: <strong className="text-blue-500">{account.name}</strong>
-        </div>
-        <button
-          onClick={disconnect}
-          className="bg-red-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300"
-        >
-          Disconnect from wallet
-        </button>
-      </div>
+      <Wallet/>
       <div className='p-10'>
         <nav className="bg-gradient-to-r from-blue-800 to-gray-800 p-20 rounded-lg">
           <div className="container mx-auto flex justify-between items-center">
             <div className="space-x-4">
-              <button onClick={()=>router.push('/todo')} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none transition duration-300 transform hover:scale-105">Visit Todo Dapp</button>
-              <button onClick={()=>router.push('/bank')} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none transition duration-300 transform hover:scale-105">Visit Bank Dapp</button>
+              <Link href={'/todo'} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none transition duration-300 transform hover:scale-105">Visit Todo Dapp</Link>
+              <Link href={'/bank'} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none transition duration-300 transform hover:scale-105">Visit Bank Dapp</Link>
             </div>
           </div>
         </nav>
