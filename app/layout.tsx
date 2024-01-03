@@ -1,8 +1,6 @@
 
 "use client"
 
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { UseInkProvider } from 'useink';
 import { RococoContractsTestnet } from 'useink/chains';
@@ -10,7 +8,6 @@ import { NotificationsProvider } from 'useink/notifications';
 import metadata from '../assets/todo_list.json';
 
 
-const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
