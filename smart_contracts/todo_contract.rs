@@ -12,7 +12,7 @@ mod todo_list {
     }
 
     impl TodoList {
-        /// Constructor that initializes the `bool` value to the given `init_value`.
+
         #[ink(constructor)]
         pub fn new() -> Self {
             Self { 
@@ -25,7 +25,6 @@ mod todo_list {
             self.tasks.push(task)
         }
 
-        /// Simply returns the current value of our `bool`.
         #[ink(message)]
         pub fn get_tasks(&self) -> Vec<String> {
             self.tasks.clone().into_iter().collect()

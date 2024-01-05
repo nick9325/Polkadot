@@ -29,10 +29,10 @@ export default function page() {
                     <p className="text-base text-gray-700">{account?.source}</p>
                 </div>
 
-                <div className="mb-4">
+                {/* <div className="mb-4">
                     <h2 className="text-xl font-semibold text-gray-800">Genesis Hash</h2>
                     <p className="text-base text-gray-700">{account?.genesisHash}</p>
-                </div>
+                </div> */}
 
                 <Link href={'/'}
                     className="font-bold text-blue-500 hover: text-blue-700 hover:underline underline-offset-4"
