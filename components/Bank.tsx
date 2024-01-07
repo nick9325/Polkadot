@@ -44,27 +44,18 @@ function Bank() {
         setAddBalanceAmount(0);
     };
 
+    useEventSubscription(contract); 
 
-    useEventSubscription(contract); // Subscribe to contract events one time.
-
-    // Fetch all events for the contract
-    //   const { events: allContractEvents } = useEvents(BANK_CONTRACT_ADDRESS);
-
-    // Fetch events with specific names ('Transfer' in this example)
     const { events: transferEvents } = useEvents(BANK_CONTRACT_ADDRESS, ['Transfer']);
-
-
-
-
 
     return (
         <div className="p-6 border rounded-lg shadow-md">
 
             <h1 className="text-2xl font-bold mb-4">Smart contract name: <span className="text-blue-500">{metadata.contract.name}</span></h1>
 
-            <p className="mb-4">
+            <p className="mb-4 flex flex-row">
                 <span className="text-gray-600">Your Balance:</span>
-                <b className="text-green-600 ml-2">{pickDecoded(getBalanceSub.result)?.toString()}</b>
+                {pickDecoded(getBalanceSub.result)?<p className="text-green-600 ml-2 font-bold">{pickDecoded(getBalanceSub.result)?.toString()}</p>:<p className='text-gray-500 ml-2'>Fetching..</p>}
             </p>
 
 

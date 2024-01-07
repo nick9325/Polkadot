@@ -4,7 +4,6 @@
 import { useWallet } from 'useink';
 import Wallet from '@/components/Wallet';
 import Link from 'next/link';
-
 import Connect from '@/components/Connect';
 
 
@@ -15,7 +14,6 @@ export default function Home() {
   if (!account) {
     return <Connect/>
   }
-
 
   return (
     <div className='flex items-center justify-center flex-col gap-3 p-4'>

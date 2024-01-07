@@ -8,14 +8,13 @@ import Link from 'next/link';
 
 export default function Connect() {
 
-
     const [isClient, setIsClient] = useState(false)
+    const { connect } = useWallet();
+    const wallets = useAllWallets();
 
     useEffect(() => {
         setIsClient(true)
     }, [])
-    const { connect } = useWallet();
-    const wallets = useAllWallets();
 
     return (
 
@@ -62,6 +61,5 @@ export default function Connect() {
                 <p className="text-gray-500">Loading...</p>
             )}
         </div>
-
     )
 }

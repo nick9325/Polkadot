@@ -22,6 +22,7 @@ function Todo() {
   const [editIndex, setEditIndex] = useState(0)
   const [deleteIndex, setDeleteIndex] = useState(0)
   const [editedTask, setEditedTask] = useState('');
+  const [Loading,setLoading] = useState(true);
 
 
 
@@ -56,9 +57,11 @@ function Todo() {
     <div className="p-6 border rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4">Smart contract name: <span className="text-blue-500">{metadata.contract.name}</span></h1>
 
-      <p className="mb-4">
-        Tasks: <b className="text-green-600">{pickDecoded(getSub.result)?.toString()}</b>
-      </p>
+
+      <p className="mb-4 flex flex-row">
+                <span className="text-gray-600">Tasks:</span>
+                {pickDecoded(getSub.result)?<p className="text-green-600 ml-2 font-bold">{pickDecoded(getSub.result)?.toString()}</p>:<p className='text-gray-500 ml-2'>Fetching..</p>}
+       </p>
 
       <div className="mb-4">
         <input

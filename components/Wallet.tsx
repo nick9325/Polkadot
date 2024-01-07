@@ -10,15 +10,9 @@ export default function Wallet() {
     console.log(useWallet)
     return (
         <div className="bg-gray-100 p-4 rounded-md shadow-md flex items-center justify-center flex-col">
-            {/* <div className="text-2xl font-semibold mb-4">
-                Wallet Name: {account?.wallet.extensionName}
-            </div> */}
             <div className="text-lg">
                 You are logged in as <Link href="/profile" className="font-bold text-blue-500 hover: text-blue-700 hover:underline underline-offset-4">{account?.name}</Link>
             </div>
-
-
-            {/* <p>Address: {account?.address}</p> */}
 
             <button
                 onClick={disconnect}
