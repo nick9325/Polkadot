@@ -2,26 +2,16 @@
 
 import { useWallet, useAllWallets } from 'useink';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 
 export default function Connect() {
 
-    const [isClient, setIsClient] = useState(false)
     const { connect } = useWallet();
     const wallets = useAllWallets();
 
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
-
     return (
-
-
         <div className='text-center p-4'>
-
-            {isClient ? (
                 <div className="flex items-center justify-center list-none p-4">
                     {wallets.map((w) => (
                         <div key={w.title} className="m-0 mx-2">
@@ -57,9 +47,6 @@ export default function Connect() {
                         </div>
                     ))}
                 </div>
-            ) : (
-                <p className="text-gray-500">Loading...</p>
-            )}
         </div>
     )
 }
